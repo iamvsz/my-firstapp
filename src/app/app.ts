@@ -9,4 +9,14 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   title: string = 'my-firstapp';
+  age = 88;
+
+  carlist = ['BMW', 'Audi', 'Mercedes' ];
+
+    sports=[
+    {id:1,name:'Football'},
+    {id:2,name:'Cricket'},
+    {id:3,name:'Kabadi'}]
+
 }
+

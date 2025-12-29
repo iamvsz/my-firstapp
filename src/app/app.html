@@ -1,2 +1,61 @@
 <h1> Hello World</h1>
 {{ title }}
+
+@if (age > 18) {
+<p>you are eligible to vote</p>
+}@else if(age == 18) {
+<p>Welcome for the first time</p>
+}@else {
+<p>You are not eligible to vote</p>
+}
+
+@switch (age) {
+@case (18) {
+<p>Your age is 18</p>
+}
+@case (20) {
+<p>Your age is 20</p>
+}
+@default {
+<p>Your age is neither 18 nor 20</p>
+}
+
+}
+
+@for (item of carlist; track item) {
+<ul>
+    <li>
+        {{ $index }} - {{ item }}
+    </li>
+</ul>
+}
+
+@for (item of sports; track item.id; let idx = $index, e = $even, o = $odd, f = $first, l = $last, c = $count) {
+    Item #{{ idx }}: {{ item.name }} {{e}} - {{o}} - {{f}} - {{l}} -- {{c}}<br>
+}
+
+@for (item of sports; track item.id; let idx = $index, f = $first) {
+    <p [style.backgroundColor]="f ? 'yellow' : 'white'">
+        Item #{{ idx }}: {{ item.name }} 
+    </p>
+}
+
+
+<table>
+    <thead>
+        <tr>
+            <th>sno</th>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of sports; track item.id; let idx = $index, e = $even) {
+        <tr [style.backgroundColor]="e ? 'lightgray' : 'white'">
+            <td>{{ idx + 1 }}</td>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+        </tr>
+        }
+    </tbody>
+</table>
