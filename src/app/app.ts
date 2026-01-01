@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule],
+  imports: [FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
@@ -25,4 +25,8 @@ export class App {
     { id: 2, name: 'Cricket' },
     { id: 3, name: 'Kabadi' },
   ];
+
+  fun2() {
+    alert("I am Iron man")
+  }
 }
