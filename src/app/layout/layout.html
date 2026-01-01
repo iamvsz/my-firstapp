@@ -1,16 +1,18 @@
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a class="nav-link" aria-current="page" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a class="nav-link" aria-current="page" routerLink="/" routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLink]="['/about', 1, 'sample']" routerLinkActive="active">About</a>
+    <a class="nav-link" [routerLink]="['/about', 1, 'sample']" [queryParams]="{ page:1, search: 'Gemini'}"
+      routerLinkActive="active">About</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
   </li>
-   
+
 </ul>
 
 <div class="container-fluid">
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
