@@ -59,3 +59,27 @@
         }
     </tbody>
 </table>
+
+<!-- string interpolation -->
+ <p>{{ title }}</p>
+
+ <!-- Attribute binding -->
+
+ <div [attr.title]="title"></div>
+
+ <!-- property binding -->
+
+ <input type="text" [value]="title" />
+
+    <!-- class binding -->
+<div [class]="xyz"> This is class binding example</div>
+    
+<div [class]="firstClass">object class binding example</div>
+
+<div [style]="firstStyle">Style binding example</div>
+<div [style.color]=" 'blue' "> Style binding example 2</div>
+<div [style.color]=" secondStyle "> Style binding example 2</div>
+
+<input type="text" [(ngModel)]="userName"/>
+
+{{userName}}
