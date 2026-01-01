@@ -4,7 +4,7 @@ import { About } from './about/about';
 import { Contact } from './contact/contact';
 
 export const routes: Routes = [
-    {path: "Home", component: Home},
-    {path: "About", component: About},
-    {path:"Contact", component: Contact}
+    {path: '', component: Home, pathMatch: 'full'},
+    {path: "about/:id/:name", component: About},
+    {path:"contact", component: Contact}
 ]; 
