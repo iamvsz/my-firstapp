@@ -13,6 +13,11 @@ export class About implements OnInit {
     name: ''
   }
 
+  Query = {
+    page: '',
+    search: ''
+  }
+
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -21,13 +26,28 @@ export class About implements OnInit {
     //   name: this.route.snapshot.params['name']
     // }
 
-
+    //path params
     this.route.params.subscribe((data: Params) => {
       this.user = {
         id: data['id'],
         name: data['name']
       }
     })
+
+    //query params
+
+    this.route.queryParams.subscribe((data: Params) =>  {
+      console.log('query params', data);
+      this.Query = {
+        page: data['page'],
+        search: data['search']  
+      }
+    })
+
+    console.log(this.route.snapshot.queryParams);
+    console.log(this.route.snapshot.params);
   }
+
+
 
 }

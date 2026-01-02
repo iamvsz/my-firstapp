@@ -14,7 +14,7 @@ export class Home {
   }
 
   gotoAbout() {
-    this.router.navigateByUrl('about/1/sample');
+    this.router.navigateByUrl('about/1/sample?page=1&search=Gemini');
     //this.router.navigate(['/about', 1, 'sample']);
   }
 }
